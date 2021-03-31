@@ -1,12 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div v-if="this.$store.state.token" id="nav">
+      <router-link to="/Events">Liste des events</router-link> / 
+      <router-link to="/Users">Liste des users</router-link>
+      <br>
+      <button @click="Deconnexion" class="button is-primarybutton is-primary">Deconnexion</button>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      
+    }
+  },
+  mounted() {
+    
+  },
+  methods: {
+    Deconnexion(){
+      this.$store.state.token = false
+      this.$store.state.admin = false
+      this.$router.push('/')
+
+    },
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
