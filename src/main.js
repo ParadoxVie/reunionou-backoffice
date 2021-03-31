@@ -8,7 +8,7 @@ require('@/assets/main.scss');
 
 // Connexion à l'api 
 window.api = axios.create({ 
-    baseURL: "http://ffba66ce2a38.ngrok.io/",
+    baseURL: "https://docketu.iutnc.univ-lorraine.fr:14003/",
     // withCredentials: true 
 });
 Vue.config.productionTip = false
